@@ -2,6 +2,8 @@
 import java.sql.Connection; 
 import java.sql.DriverManager; 
 import java.sql.SQLException; 
+import java.util.Properties;
+import java.io.FileInputStream;  
 
 // This class can be used to initialize the database connection 
 public class DatabaseConnection { 
@@ -10,17 +12,31 @@ public class DatabaseConnection {
 	{ 
 		// Initialize all the information regarding 
 		// Database Connection 
-		String dbDriver = "com.mysql.cj.jdbc.Driver"; 
-		String dbURL = "jdbc:mysql://localhost:3306/"; 
-		// Database name to access 
-		String dbName = "coolthings"; 
-		String dbUsername = "root"; 
-		String dbPassword = "root"; 
+		
+		
+		Properties props = new Properties();
+		try {
+		FileInputStream in = new FileInputStream("/Users/nagen/git/SimplilearnWebJava/WebJava/WebContent/WEB-INF/lib/config.properties");
+		
+		props.load(in);
+		in.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		Class.forName(dbDriver); 
-		Connection con = DriverManager.getConnection(dbURL + dbName, 
-													dbUsername, 
-													dbPassword); 
+		String driver = props.getProperty("jdbc.driver");
+		if (driver != null) {
+		    Class.forName(driver) ;
+		}
+
+		String url = props.getProperty("jdbc.url");
+		String username = props.getProperty("jdbc.username");
+		String password = props.getProperty("jdbc.password");
+
+		Connection con = DriverManager.getConnection(url, username, password);
+		
+
 		return con; 
 	} 
 } 
