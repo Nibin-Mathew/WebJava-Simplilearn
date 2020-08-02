@@ -1,0 +1,75 @@
+/* SQLCommands Used in class*/
+
+ mysql  -u root -p //start up your mysql from terminal / command prompt
+ 
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root'; //change root user password
+
+mysql -u root -p //if you changed password, start mysql again
+
+Show databases; //list existing databases
+
+CREATE DATABASE <db name>; //create a new database 
+//(note: I have used uppercase to emphasise - but commands are NOT case-sensitvive)
+
+Use <dbname>; //switch to your database
+
+//create a table
+create table cars_tbl (car_regn VARCHAR(15) NOT NULL, 
+     car_model VARCHAR(45) NOT NULL,
+    car_color VARCHAR(15),
+    car_mileage INT NOT NULL,
+    PRIMARY KEY (car_regn));
+
+Show tables; //list tables
+
+//insert records
+//I have just given one example below - be sure to insert multiple such rows
+insert into cars_tbl VALUES('KA01 QQ 4455', 'Maserati', 'Red', 800);
+
+Select * from cars_tbl; //list rows
+
+//use of the where clause for filtering
+select car_regn from cars_tbl where car_color="red";
+
+delete from cars_tbl where car_regn="<value>"; //deletes the row
+
+update cars_tbl SET car_color="Snazzy red" where car_regn = "<value>"; //updates a row
+
+
+//create a new table to try UNION
+create table bikes_tbl (bike_regn VARCHAR(15) NOT NULL, 
+     bike_model VARCHAR(45) NOT NULL,
+    bike_category varchar(15),
+    bike_color VARCHAR(15),
+    PRIMARY KEY (bike_regn));
+
+//insert records
+//I have just given one example below - be sure to insert multiple such rows
+insert into bikes_tbl (bike_regn, bike_model, bike_category, bike_color) VALUES (“MJ 2C 4509”, “Kawasaki”, “800CC”, “Red”);
+
+//UNION of 2 tables
+select 'Car' as Label, car_regn, car_model, car_color 
+    from cars_tbl
+    UNION
+    select ‘Bike’, bike_regn, bike_model, bike_color
+    from bikes_tbl;
+
+
+//Create a new table to try join
+create table car_owners_tbl (owner_id int NOT NULL AUTO_INCREMENT,
+    Name varchar(50) NOT NULL,
+    MobileNo int,
+    PRIMARY KEY (owner_id),
+     car_regn varchar(15),
+    FOREIGN KEY (car_regn) REFERENCES cars_tbl(car_regn));
+
+/insert records
+//I have just given one example below - be sure to insert multiple such rows
+/**** IMPORTANT **** - the car_regn value you provide here must match one that exists in cars_tbl
+insert into car_owners_tbl(Name, MobileNo, car_regn) VALUES("Bahadur", 47671392, "KA01 CC 200");
+
+//Join across 2 tables
+select a.car_regn, a.car_model, a.car_color, b.Name, b.MobileNo 
+     from cars_tbl a, car_owners_tbl b
+    where a.car_regn = b.car_regn;
+
