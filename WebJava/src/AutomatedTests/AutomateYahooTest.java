@@ -1,3 +1,4 @@
+package AutomatedTests;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //comment the above line and uncomment below line to use Chrome
@@ -20,7 +21,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
 
-public class MyAppTest {
+public class AutomateYahooTest {
 	private static WebDriver driver;
 	private static Map<String, Object> vars;
 
@@ -32,29 +33,27 @@ public class MyAppTest {
 		System.setProperty("webdriver.chrome.driver","/Users/nagen/Downloads/chromedriver");
 	    driver = new ChromeDriver();
     	
-        String baseUrl = "http://localhost:8080/WebJava/";
-       
+        
+        String baseUrl = "https://login.yahoo.com";
         
         vars = new HashMap<String, Object>();
         // launch  and direct it to the Base URL
         driver.get(baseUrl);
 
-        driver.manage().window().setSize(new Dimension(1280, 777));
-        vars.put("window_handles", driver.getWindowHandles());
-        driver.findElement(By.linkText("Add a new record")).click();
-        vars.put("win2548", waitForWindow(2000));
-        driver.switchTo().window(vars.get("win2548").toString());
-        driver.findElement(By.name("regn_num")).click();
-        driver.findElement(By.name("regn_num")).sendKeys("SU 77 NBCN");
-        driver.findElement(By.name("model")).click();
-        driver.findElement(By.name("model")).sendKeys("Rolls Royce");
-        driver.findElement(By.name("color")).click();
-        driver.findElement(By.name("color")).sendKeys("Black");
-        driver.findElement(By.name("mileage")).click();
-        driver.findElement(By.name("mileage")).sendKeys("4560");
-        driver.findElement(By.cssSelector("input:nth-child(15)")).click();
-        //assertThat(driver.findElement(By.cssSelector("body")).getText(), is("Successfully Inserted"));
+        try {
+        driver.manage().window().maximize();
+        Thread.sleep(4000);
         
+       // driver.navigate().to("https://login.yahoo.com");
+      
+        driver.findElement(By.cssSelector("#login-username")).sendKeys("simplilearn");
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("#login-signin")).click();
+        Thread.sleep(5000); 
+        }
+        catch (Exception e1) {
+        	e1.printStackTrace();
+        }
         
         
         
