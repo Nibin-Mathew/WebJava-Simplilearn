@@ -51,7 +51,7 @@ public class WebAppTest {
       catch (Exception e1) { e1.printStackTrace();}
       driver.switchTo().window(vars.get("win2548").toString());
       driver.findElement(By.name("regn_num")).click();
-      driver.findElement(By.name("regn_num")).sendKeys("BV 77 SAHH");
+      driver.findElement(By.name("regn_num")).sendKeys("BV 79 SAGV");
       driver.findElement(By.name("model")).click();
       driver.findElement(By.name("model")).sendKeys("Corvette");
       driver.findElement(By.name("color")).click();
