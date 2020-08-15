@@ -19,6 +19,7 @@ public class DropDownTest {
 
 		Select drpCountry = new Select(driver.findElement(By.name("country")));
 		drpCountry.selectByVisibleText("BAHAMAS");
+		System.out.println("Selected Bahamas");
 
 		//Selecting Items in a Multiple SELECT elements
 		driver.get("http://jsbin.com/osebed/2");

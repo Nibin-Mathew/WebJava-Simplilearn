@@ -23,8 +23,7 @@ import java.util.Set;
 
 public class AmazonMobilesTest {
 	private static WebDriver driver;
-	private static Map<String, Object> vars;
-
+	
     public static void main(String[] args) {
         // declaration and instantiation of objects/variables
     //	System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
@@ -36,7 +35,7 @@ public class AmazonMobilesTest {
         String baseUrl = "http://www.amazon.in";
        
         
-        vars = new HashMap<String, Object>();
+        
         // launch  and direct it to the Base URL
         driver.get(baseUrl);
 
@@ -44,12 +43,13 @@ public class AmazonMobilesTest {
         driver.manage().window().maximize();
         Thread.sleep(4000);
   
-        driver.findElement(By.xpath("//*[@id=\"nav-xshop\"]/a[1]")).click();
-        //driver.findElement(By.id("twotabsearchtextbox")).sendKeys("mobiles");
+        //driver.findElement(By.xpath("//*[@id=\"nav-xshop\"]/a[1]")).click();
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("mobiles");
         Thread.sleep(4000);
         driver.findElement(By.className("nav-input")).click();
         Thread.sleep(4000);
-        driver.findElement(By.partialLinkText("Apple iPhone 11")).click(); 
+        //driver.findElement(By.partialLinkText("Apple iPhone 11")).click(); 
+        driver.findElement(By.partialLinkText("Samsung")).click();
         Thread.sleep(2000);
         
        
@@ -66,18 +66,6 @@ public class AmazonMobilesTest {
        
     }
     
-    public static String waitForWindow(int timeout) {
-        try {
-          Thread.sleep(timeout);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-        Set<String> whNow = driver.getWindowHandles();
-        Set<String> whThen = (Set<String>) vars.get("window_handles");
-        if (whNow.size() > whThen.size()) {
-          whNow.removeAll(whThen);
-        }
-        return whNow.iterator().next();
-      }
+ 
 
 }

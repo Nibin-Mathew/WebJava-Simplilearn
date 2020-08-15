@@ -42,16 +42,20 @@ public class MyAppTest {
         driver.manage().window().setSize(new Dimension(1280, 777));
         vars.put("window_handles", driver.getWindowHandles());
         driver.findElement(By.linkText("Add a new record")).click();
-        vars.put("win2548", waitForWindow(2000));
+       // vars.put("win2548", waitForWindow(2000));
+        try {
+        Thread.sleep(1000);
+        }
+        catch (Exception e1) { e1.printStackTrace();}
         driver.switchTo().window(vars.get("win2548").toString());
         driver.findElement(By.name("regn_num")).click();
-        driver.findElement(By.name("regn_num")).sendKeys("SU 77 NBCN");
+        driver.findElement(By.name("regn_num")).sendKeys("NN 45 CIOO");
         driver.findElement(By.name("model")).click();
-        driver.findElement(By.name("model")).sendKeys("Rolls Royce");
+        driver.findElement(By.name("model")).sendKeys("Corvette");
         driver.findElement(By.name("color")).click();
-        driver.findElement(By.name("color")).sendKeys("Black");
+        driver.findElement(By.name("color")).sendKeys("Red");
         driver.findElement(By.name("mileage")).click();
-        driver.findElement(By.name("mileage")).sendKeys("4560");
+        driver.findElement(By.name("mileage")).sendKeys("4444");
         driver.findElement(By.cssSelector("input:nth-child(15)")).click();
         //assertThat(driver.findElement(By.cssSelector("body")).getText(), is("Successfully Inserted"));
         
@@ -64,7 +68,7 @@ public class MyAppTest {
        
     }
     
-    public static String waitForWindow(int timeout) {
+   /* public static String waitForWindow(int timeout) {
         try {
           Thread.sleep(timeout);
         } catch (InterruptedException e) {
@@ -76,6 +80,6 @@ public class MyAppTest {
           whNow.removeAll(whThen);
         }
         return whNow.iterator().next();
-      }
+      } */
 
 }

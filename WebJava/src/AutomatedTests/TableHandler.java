@@ -40,6 +40,6 @@ public class TableHandler {
         	Thread.sleep(5000);
         }
         catch (Exception e) {}
-        wd.close();
+       // wd.close();
     }
 }

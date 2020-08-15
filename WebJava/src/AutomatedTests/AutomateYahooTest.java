@@ -23,8 +23,7 @@ import java.util.Set;
 
 public class AutomateYahooTest {
 	private static WebDriver driver;
-	private static Map<String, Object> vars;
-
+	
     public static void main(String[] args) {
         // declaration and instantiation of objects/variables
     //	System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
@@ -36,7 +35,7 @@ public class AutomateYahooTest {
         
         String baseUrl = "https://login.yahoo.com";
         
-        vars = new HashMap<String, Object>();
+       
         // launch  and direct it to the Base URL
         driver.get(baseUrl);
 
@@ -63,18 +62,5 @@ public class AutomateYahooTest {
        
     }
     
-    public static String waitForWindow(int timeout) {
-        try {
-          Thread.sleep(timeout);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-        Set<String> whNow = driver.getWindowHandles();
-        Set<String> whThen = (Set<String>) vars.get("window_handles");
-        if (whNow.size() > whThen.size()) {
-          whNow.removeAll(whThen);
-        }
-        return whNow.iterator().next();
-      }
 
 }

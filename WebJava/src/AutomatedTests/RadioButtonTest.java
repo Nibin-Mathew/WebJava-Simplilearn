@@ -28,8 +28,8 @@ public class RadioButtonTest {
         WebElement option1 = driver.findElement(By.id("vfb-6-0"));							
 
         // This will Toggle the Check box 		
-        option1.click();			
-
+        option1.click();	
+        try {Thread.sleep(2000);} catch(Exception e1) {}
         // Check whether the Check box is toggled on 		
         if (option1.isSelected()) {					
             System.out.println("Checkbox is Toggled On");					
@@ -37,17 +37,9 @@ public class RadioButtonTest {
         } else {			
             System.out.println("Checkbox is Toggled Off");					
         }		
-         
-        		
-        		
-        //Selecting Checkbox and using isSelected Method		
-        driver.get("http://demo.guru99.com/test/facebook.html");					
-        WebElement chkFBPersist = driver.findElement(By.id("persist_box"));							
-        for (int i=0; i<2; i++) {											
-            chkFBPersist.click (); 			
-            System.out.println("Facebook Persists Checkbox Status is -  "+chkFBPersist.isSelected());							
-        }		
-		//driver.close();		
+        try {Thread.sleep(2000);} catch(Exception e1) {}
+        
+		driver.close();		
     }  	
 }
     	
