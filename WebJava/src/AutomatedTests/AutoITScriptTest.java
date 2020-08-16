@@ -1,4 +1,4 @@
-package SeleniumTest;
+package AutomatedTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

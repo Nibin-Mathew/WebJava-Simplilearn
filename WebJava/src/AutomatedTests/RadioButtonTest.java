@@ -19,7 +19,7 @@ public class RadioButtonTest {
         //Radio Button1 is selected		
         radio1.click();			
         System.out.println("Radio Button Option 1 Selected");					
-        		
+        try {Thread.sleep(2000);} catch(Exception e1) {}
         //Radio Button1 is de-selected and Radio Button2 is selected		
         radio2.click();			
         System.out.println("Radio Button Option 2 Selected");					

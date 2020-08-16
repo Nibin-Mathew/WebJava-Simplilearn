@@ -43,8 +43,8 @@ public class AmazonMobilesTest {
         driver.manage().window().maximize();
         Thread.sleep(4000);
   
-        //driver.findElement(By.xpath("//*[@id=\"nav-xshop\"]/a[1]")).click();
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("mobiles");
+        driver.findElement(By.xpath("//*[@id=\"nav-xshop\"]/a[1]")).click();
+        //driver.findElement(By.id("twotabsearchtextbox")).sendKeys("mobiles");
         Thread.sleep(4000);
         driver.findElement(By.className("nav-input")).click();
         Thread.sleep(4000);

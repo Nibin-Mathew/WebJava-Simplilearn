@@ -46,11 +46,11 @@ public static void main(String args[]) {
    // driver.manage().window().setSize(new Dimension(550, 691));
     driver.findElement(By.cssSelector(".fuji-button-text > span")).click();
     driver.findElement(By.id("login-username")).click();
-    driver.findElement(By.id("login-username")).sendKeys("nagen.rm");
+    driver.findElement(By.id("login-username")).sendKeys("simplilearn");
     driver.findElement(By.cssSelector("label:nth-child(2)")).click();
     driver.findElement(By.id("login-signin")).click();
     driver.findElement(By.id("login-passwd")).click();
-    driver.findElement(By.id("login-passwd")).sendKeys("dva22ita");
+    driver.findElement(By.id("login-passwd")).sendKeys("password");
     driver.findElement(By.id("login-signin")).click();
   //  driver.findElement(By.linkText("Remind me later")).click();
     WebDriverWait wait = new WebDriverWait(driver,3000);

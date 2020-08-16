@@ -25,8 +25,8 @@ public class DropDownTest {
 		driver.get("http://jsbin.com/osebed/2");
 		Select fruits = new Select(driver.findElement(By.id("fruits")));
 		fruits.selectByVisibleText("Banana");
-		fruits.selectByIndex(1);
-		
+		fruits.selectByIndex(3);
+
 		//Select select = new Select(element);
 		List<WebElement> selectedOptions = fruits.getAllSelectedOptions();
 		for(WebElement selectedOption : selectedOptions) {
