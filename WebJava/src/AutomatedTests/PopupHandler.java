@@ -14,7 +14,7 @@ public class PopupHandler {
 		WebDriver driver = new ChromeDriver();			
         		
         //Launching the site.				
-            driver.get("http://demo.guru99.com/popup.php");			
+        driver.get("http://demo.guru99.com/popup.php");			
         driver.manage().window().maximize();		
                 		
         driver.findElement(By.xpath("//*[contains(@href,'popup.php')]")).click();			
@@ -22,7 +22,7 @@ public class PopupHandler {
         String MainWindow=driver.getWindowHandle();		
         		
         // To handle all new opened window.				
-            Set<String> s1=driver.getWindowHandles();		
+        Set<String> s1=driver.getWindowHandles();		
         Iterator<String> i1=s1.iterator();		
         		
         while(i1.hasNext())			

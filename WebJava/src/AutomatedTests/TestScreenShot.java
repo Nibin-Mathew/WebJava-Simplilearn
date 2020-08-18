@@ -56,7 +56,7 @@ public class TestScreenShot {
         //Call getScreenshotAs method to create image file
 
                 File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-
+                
             //Move image file to new destination
 
                 File DestFile=new File(fileWithPath);
