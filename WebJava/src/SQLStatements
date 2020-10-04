@@ -1,10 +1,6 @@
 /* SQLCommands Used in class*/
 
  mysql  -u root -p //start up your mysql from terminal / command prompt
- 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'root'; //change root user password
-
-mysql -u root -p //if you changed password, start mysql again
 
 Show databases; //list existing databases
 
