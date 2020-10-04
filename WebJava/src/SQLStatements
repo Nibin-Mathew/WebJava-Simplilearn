@@ -18,6 +18,8 @@ create table cars_tbl (car_regn VARCHAR(15) NOT NULL,
 
 Show tables; //list tables
 
+describe <tablename> //shows the structure of the table
+
 //insert records
 //I have just given one example below - be sure to insert multiple such rows
 insert into cars_tbl VALUES('KA01 QQ 4455', 'Maserati', 'Red', 800);
