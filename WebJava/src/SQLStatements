@@ -49,7 +49,7 @@ insert into bikes_tbl (bike_regn, bike_model, bike_category, bike_color) VALUES 
 select 'Car' as Label, car_regn, car_model, car_color 
     from cars_tbl
     UNION
-    select ‘Bike’, bike_regn, bike_model, bike_color
+    select 'Bike', bike_regn, bike_model, bike_color
     from bikes_tbl;
 
 
