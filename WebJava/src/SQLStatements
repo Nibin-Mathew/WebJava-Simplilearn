@@ -80,6 +80,12 @@ select 'Car' as Label, car_regn, car_model, car_color from cars_tbl UNION select
 End &&
 delimiter ;
 
+//to run the stored proc
+call carsnbikes();
+
+//to show the content of the stored proc
+show create procedure <procname>;
+
 //create a stored proc called CalcFuelEfficiency
 // that accepts parameters and returns a value
 delimiter && //change delimiter
@@ -91,3 +97,6 @@ from cars_tbl
 where car_regn=regn;
 end &&
 delimiter ;
+
+call CalcFuelEfficiency("regn num", @feval);
+select @feval;
