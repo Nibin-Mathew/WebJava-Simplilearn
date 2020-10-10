@@ -43,7 +43,7 @@ create table bikes_tbl (bike_regn VARCHAR(15) NOT NULL,
 
 //insert records
 //I have just given one example below - be sure to insert multiple such rows
-insert into bikes_tbl (bike_regn, bike_model, bike_category, bike_color) VALUES (“MJ 2C 4509”, “Kawasaki”, “800CC”, “Red”);
+insert into bikes_tbl (bike_regn, bike_model, bike_category, bike_color) VALUES ('MJ 2C 4509', 'Kawasaki', '800CC', 'Red');
 
 //UNION of 2 tables
 select 'Car' as Label, car_regn, car_model, car_color 
@@ -64,7 +64,7 @@ create table car_owners_tbl (owner_id int NOT NULL AUTO_INCREMENT,
 /insert records
 //I have just given one example below - be sure to insert multiple such rows
 /**** IMPORTANT **** - the car_regn value you provide here must match one that exists in cars_tbl
-insert into car_owners_tbl(Name, MobileNo, car_regn) VALUES("Bahadur", 47671392, "KA01 CC 200");
+insert into car_owners_tbl(Name, MobileNo, car_regn) VALUES('Bahadur', 47671392, 'KA01 QQ 4455');
 
 //Join across 2 tables
 select a.car_regn, a.car_model, a.car_color, b.Name, b.MobileNo 
@@ -82,8 +82,9 @@ delimiter ;
 
 //create a stored proc called CalcFuelEfficiency
 // that accepts parameters and returns a value
-delimiter &&
-create PROCEDURE CalcFuelEfficiency (in regn varchar(15), out fe float) //first parameter is input, 2nd is putput
+delimiter && //change delimiter
+//1st parameter is input, 2nd is output
+create PROCEDURE CalcFuelEfficiency (in regn varchar(15), out fe float) 
 begin
 select car_mileage * 0.05 into fe
 from cars_tbl
