@@ -32,9 +32,8 @@ public class CalendarTest {
 
         WebElement dateBox = driver.findElement(By.xpath("//form//input[@name='bdaytime']"));
 
-        //Fill date as mm/dd/yyyy as 22/08/2020
-
-        dateBox.sendKeys("22082020");
+        //Fill date as mm/dd/yyyy as 01/01/2020
+	dateBox.sendKeys("01/01/2020");
 
         //Press tab to shift focus to time field
 
@@ -42,7 +41,8 @@ public class CalendarTest {
 
         //Fill time as 7:30 PM
 
-        dateBox.sendKeys("0730PM");
+        dateBox.sendKeys("07:30 PM");
+        
 
     }
 
