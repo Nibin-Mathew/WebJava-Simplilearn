@@ -42,7 +42,7 @@ public class MyAppTest {
         driver.manage().window().setSize(new Dimension(1280, 777));
         vars.put("window_handles", driver.getWindowHandles());
         driver.findElement(By.linkText("Add a new record")).click();
-       // vars.put("win2548", waitForWindow(2000));
+        vars.put("win2548", waitForWindow(2000));
         try {
         Thread.sleep(1000);
         }
