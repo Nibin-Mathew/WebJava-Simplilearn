@@ -60,9 +60,9 @@ public static void main(String args[]) {
   
     /*
     driver.findElement(By.id("identifierId")).click();
-    driver.findElement(By.id("identifierId")).sendKeys("nvmurti");
+    driver.findElement(By.id("identifierId")).sendKeys("xxxx");
     driver.findElement(By.cssSelector(".VfPpkd-RLmnJb")).click();
-    driver.findElement(By.name("password")).sendKeys("dva22ita");
+    driver.findElement(By.name("password")).sendKeys("xxxx");
     driver.findElement(By.cssSelector(".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-RLmnJb")).click();
     WebDriverWait wait = new WebDriverWait(driver,30);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
