@@ -33,7 +33,13 @@ public class TableHandler {
 		 System.out.println("Third row of table : "+rowtext);
 		    
 		    //to get 3rd row's 2nd column data
-		    WebElement cellIneed;
+	    	    WebElement cellIneed;
+		   cellIneed = tableRow.findElement(By.xpath("//*[@id=\"leftcontainer\"]/table/tbody/tr[3]/td[2]"));
+		    String valueIneed = cellIneed.getText();
+		    System.out.println("Third Row 2nd column contains:" + valueIneed);
+		   
+	    
+	            /*WebElement cellIneed;
 		    int i=0;
 		    String xp;
 		    for (i=1;i<rows.size();i++) {
@@ -41,7 +47,7 @@ public class TableHandler {
 		    	cellIneed = tableRow.findElement(By.xpath(xp));
 		    	String valueIneed = cellIneed.getText();
 		    	System.out.println("Cell value is : " + valueIneed); 
-		    }
+		    } */
         try {
         	Thread.sleep(5000);
         }
