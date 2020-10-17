@@ -68,7 +68,7 @@ public class MyAppTest {
        
     }
     
-   /* public static String waitForWindow(int timeout) {
+    public static String waitForWindow(int timeout) {
         try {
           Thread.sleep(timeout);
         } catch (InterruptedException e) {
@@ -80,6 +80,6 @@ public class MyAppTest {
           whNow.removeAll(whThen);
         }
         return whNow.iterator().next();
-      } */
+      } 
 
 }
