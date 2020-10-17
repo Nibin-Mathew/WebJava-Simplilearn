@@ -12,7 +12,8 @@ public class RadioButtonTest {
     	System.setProperty("webdriver.chrome.driver","/Users/nagen/Downloads/chromedriver");
         WebDriver driver = new ChromeDriver();		
 
-        driver.get("http://demo.guru99.com/test/radio.html");					
+        driver.get("http://demo.guru99.com/test/radio.html");	
+	driver.manage().window().setSize(new Dimension(1280, 777));
         WebElement radio1 = driver.findElement(By.id("vfb-7-1"));							
         WebElement radio2 = driver.findElement(By.id("vfb-7-2"));							
         		
